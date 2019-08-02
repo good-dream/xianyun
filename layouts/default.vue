@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <!-- 组件占位符,相当于router-view -->
+    <!-- nuxt组件占位符,相当于router-view -->
     <nuxt />
 
     <Footer/>

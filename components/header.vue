@@ -17,7 +17,8 @@
         </el-row>
 
         <!-- 注册登录 -->
-        <div v-if="false">
+        <!-- 登录之前显示 -->
+        <div v-if="!$store.state.user.userInfo.token">
           <el-dropdown>
             
             <span class="el-dropdown-link">
@@ -37,13 +38,13 @@
             <!-- 登录后显示的名字,且有下拉菜单 -->
             <span class="el-dropdown-link">
               <img src="http://157.122.54.189:9095/assets/images/avatar.jpg" alt="">
-              电动小马达
+              {{$store.state.user.userInfo.user.nickname}}
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
 
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>个人中心</el-dropdown-item>
-              <el-dropdown-item>退出</el-dropdown-item>
+              <el-dropdown-item @click.native="handleLogout">退出</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -56,6 +57,17 @@
 export default {
   data(){
     return {
+      
+    }
+  },
+  methods:{
+    // 用户退出
+    // 退出功能只需要清楚store和本地的用户信息即可
+    // 1.在store里面同步修改数据mutations中新增清除方法
+    // 2.在header.vue中调用清除方法
+    handleLogout(){
+      // 清除userinfo的数据
+      this.$store.commit('user/clearUserInfo')
       
     }
   }
