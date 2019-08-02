@@ -112,6 +112,9 @@ export default {
         //获取成功返回的信息(验证码)
         console.log(res);
         const { code } = res.data; //解构赋值
+        this.$alert(`模拟手机验证码为:${code}`,'提示',{
+          type:'warning'
+        })
       });
     },
     // 点击发送注册

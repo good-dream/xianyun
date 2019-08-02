@@ -24,7 +24,7 @@ export const mutations = {
 
   // 清除用户数据
   clearUserInfo(state){
-    state.uesrInfo={
+    state.userInfo={
       token:'',
       user:{}
     }

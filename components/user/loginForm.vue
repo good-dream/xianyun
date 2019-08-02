@@ -59,7 +59,7 @@ export default {
           // 提交登录接口
           this.$axios({
             url:'/accounts/login',
-            methods:'POST',
+            method:'POST',
             data:this.form
           }).then(res=>{
             // 把后台返回来的数据(里面包含token的状态保持),保存在store,但要使用mutations里面的方法

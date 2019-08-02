@@ -62,10 +62,11 @@ export default {
   },
   methods:{
     // 用户退出
-    // 退出功能只需要清楚store和本地的用户信息即可
+    // 退出功能只需要清除store和本地的用户信息即可
     // 1.在store里面同步修改数据mutations中新增清除方法
     // 2.在header.vue中调用清除方法
     handleLogout(){
+      
       // 清除userinfo的数据
       this.$store.commit('user/clearUserInfo')
       

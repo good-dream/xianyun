@@ -32,6 +32,7 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
+    '@/plugins/axios',  //调用插件
     { src: '@/plugins/localStorage', ssr: false }
   ],
   /*
