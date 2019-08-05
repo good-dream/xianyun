@@ -219,6 +219,21 @@ export default {
         // url的5个参数
         query: this.form
       });
+
+      // 获取出本地(vuex)的数据
+      const arr=[...this.$store.state.air.history];
+
+      // 新的记录添加到第一个
+      arr.unshift(this.form);
+
+      // 如果长度大于5,只保留5位
+      if(arr.length>5){
+        arr.length=5;
+      }
+
+      // 调用vuex的方法保存数据
+      this.$store.commit('air/setHistory',arr)
+
     },
     // 出发和到达城市互换时触发
     handleReverse() {
