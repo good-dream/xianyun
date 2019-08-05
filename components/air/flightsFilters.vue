@@ -125,7 +125,7 @@ export default {
       // 触发父组件传递过来的事件,修改datalist
       this.$emit("getDataList", arr);
     },
-
+    // 选择客机大小时候触发
     handleAirSize(value) {
       const arr = this.data.flights.filter(v => {
         return v.plane_size === value;
@@ -135,7 +135,7 @@ export default {
       // 触发父组件传递过来的事件,修改datalist
       this.$emit("getDataList", arr);
     },
-
+    // 点击撤销时触发
     handleFiltersCancel() {
       // 初始化条件选项
       this.airport = "";
